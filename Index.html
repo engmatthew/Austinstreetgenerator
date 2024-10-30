@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Street Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+        }
+        #streetName {
+            font-size: 2em;
+            margin: 20px;
+            color: #333;
+        }
+        #generateBtn {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #generateBtn:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Austin Street Name Generator</h1>
+    <div id="streetName">Click the button to see a street name</div>
+    <button id="generateBtn">Generate Street Name</button>
+</div>
+
+<script>
+    const streets = [
+        "Congress Avenue", "6th Street", "Guadalupe Street", "Riverside Drive",
+        "Barton Springs Road", "Lamar Boulevard", "South Congress Avenue",
+        "Mopac Expressway", "Burnet Road", "Parmer Lane", "Martin Luther King Jr. Boulevard",
+        "Cesar Chavez Street", "Airport Boulevard", "Slaughter Lane", "Enfield Road",
+        "Red River Street", "Manor Road", "Far West Boulevard", "Duval Street", "Oltorf Street"
+    ];
+
+    function generateRandomStreet() {
+        const randomIndex = Math.floor(Math.random() * streets.length);
+        document.getElementById("streetName").textContent = streets[randomIndex];
+    }
+
+    document.getElementById("generateBtn").addEventListener("click", generateRandomStreet);
+</script>
+
+</body>
+</html>
